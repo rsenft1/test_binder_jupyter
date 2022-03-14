@@ -50,6 +50,13 @@ glue("my_variable", a)
 ```md
 example markdown block {glue:}`my_variable`
 ```
+```
+print(f"some code {glue:}`my_variable`")
+```
+
+```{code-cell} ipython3
+print(f"some code {glue:}`my_variable`")
+```
 
 Some code here {glue:}`my_variable`+more code
 
