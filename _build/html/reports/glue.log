@@ -17,6 +17,7 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+<<<<<<< Updated upstream
 {glue:}`my_variable`
 ------------------
 
@@ -26,4 +27,15 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
 SyntaxError: invalid syntax (381702639.py, line 1)
+=======
+inside a {code-cell} {glue:}`my_variable`
+------------------
+
+[0;36m  File [0;32m"/var/folders/0y/5d1shp9n6kq856jtm9t10mcw0000gq/T/ipykernel_29047/2161986639.py"[0;36m, line [0;32m1[0m
+[0;31m    inside a {code-cell} {glue:}`my_variable`[0m
+[0m           ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (2161986639.py, line 1)
+>>>>>>> Stashed changes
 

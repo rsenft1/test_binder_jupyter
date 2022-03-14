@@ -9,7 +9,11 @@
         }
       },
       "data": {
+<<<<<<< Updated upstream
         "text/plain": "'my variable!'"
+=======
+        "text/plain": "'Batch1'"
+>>>>>>> Stashed changes
       }
     }
   }

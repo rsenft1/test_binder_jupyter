@@ -246,32 +246,60 @@ Choose a key that you will remember, as you will use it later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<<<<<<< Updated upstream
 <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;my variable!&quot;</span>
+=======
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Batch1&quot;</span>
+>>>>>>> Stashed changes
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;my_variable&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< Updated upstream
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;my variable!&#39;
+=======
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batch1&#39;
+>>>>>>> Stashed changes
 </pre></div>
 </div>
 </div>
 </div>
+<<<<<<< Updated upstream
 <p>You can then insert it into your text like so: <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'my</span> <span class="pre">variable!'</span></code></span>.</p>
 <p>That was accomplished with the following code: <code class="docutils literal notranslate"><span class="pre">{glue:}`my_variable`</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{glue:}`my_variable`
+=======
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>example markdown block {glue:}`my_variable`
+</pre></div>
+</div>
+<p>Some code here <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'Batch1'</span></code></span>+more code</p>
+<p>You can then insert it into your text like so: <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">'Batch1'</span></code></span>.</p>
+<p>That was accomplished with the following code: <code class="docutils literal notranslate"><span class="pre">{glue:}`my_variable`</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>inside a code block {glue:}`my_variable`
+>>>>>>> Stashed changes
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<<<<<<< Updated upstream
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>{glue:}`my_variable`
+=======
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>inside a {code-cell} {glue:}`my_variable`
+>>>>>>> Stashed changes
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< Updated upstream
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;/var/folders/0y/5d1shp9n6kq856jtm9t10mcw0000gq/T/ipykernel_27731/381702639.py&quot;, line 1
     {glue:}`my_variable`
           ^
+=======
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;/var/folders/0y/5d1shp9n6kq856jtm9t10mcw0000gq/T/ipykernel_29047/2161986639.py&quot;, line 1
+    inside a {code-cell} {glue:}`my_variable`
+           ^
+>>>>>>> Stashed changes
 SyntaxError: invalid syntax
 </pre></div>
 </div>
@@ -279,12 +307,19 @@ SyntaxError: invalid syntax
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<<<<<<< Updated upstream
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>{glue:}`my_variable`
+=======
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>inside an ipython {code-cell} {glue:}`my_variable`
+>>>>>>> Stashed changes
 </pre></div>
 </div>
 </div>
 </div>
+<<<<<<< Updated upstream
 <p><a href="#id2"><span class="problematic" id="id3">:glue:code:`my_variable`</span></a></p>
+=======
+>>>>>>> Stashed changes
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="download"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>

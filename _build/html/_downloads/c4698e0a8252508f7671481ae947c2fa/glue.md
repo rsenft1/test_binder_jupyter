@@ -43,6 +43,7 @@ The following code glues a variable inside the notebook:
 
 ```{code-cell} ipython3
 from myst_nb import glue
+<<<<<<< Updated upstream
 a = "my variable!"
 glue("my_variable", a)
 ```
@@ -60,3 +61,28 @@ That was accomplished with the following code: `` {glue:}`my_variable` ``.
 {glue:}`my_variable`
 ```
 {glue:code}`my_variable`
+=======
+a = "Batch1"
+glue("my_variable", a)
+```
+
+```md
+example markdown block {glue:}`my_variable`
+```
+
+Some code here {glue:}`my_variable`+more code
+
+You can then insert it into your text like so: {glue:}`my_variable`.
+
+That was accomplished with the following code: `` {glue:}`my_variable` ``.
+
+```
+inside a code block {glue:}`my_variable`
+```
+```{code-cell}
+inside a {code-cell} {glue:}`my_variable`
+```
+```{code-cell} ipython3
+inside an ipython {code-cell} {glue:}`my_variable`
+```
+>>>>>>> Stashed changes
