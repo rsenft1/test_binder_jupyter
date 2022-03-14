@@ -46,6 +46,10 @@ from myst_nb import glue
 a = "my variable!"
 glue("my_variable", a)
 ```
+<<<<<<< Updated upstream
+=======
+Some code here {glue:}`my_variable`+more code
+>>>>>>> Stashed changes
 
 You can then insert it into your text like so: {glue:}`my_variable`.
 
@@ -59,4 +63,7 @@ That was accomplished with the following code: `` {glue:}`my_variable` ``.
 ```{code-cell} ipython3
 {glue:}`my_variable`
 ```
+<<<<<<< Updated upstream
 {glue:code}`my_variable`
+=======
+>>>>>>> Stashed changes
