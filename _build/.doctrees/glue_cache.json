@@ -1,0 +1,16 @@
+{
+  "docs/glue": {
+    "my_variable": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "my_variable",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "'my variable!'"
+      }
+    }
+  }
+}
