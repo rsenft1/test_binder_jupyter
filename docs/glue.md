@@ -46,6 +46,7 @@ from myst_nb import glue
 a = "Batch1"
 glue("my_variable", a)
 ```
+
 ```md
 example markdown block {glue:}`my_variable`
 ```
@@ -57,11 +58,11 @@ You can then insert it into your text like so: {glue:}`my_variable`.
 That was accomplished with the following code: `` {glue:}`my_variable` ``.
 
 ```
-{glue:}`my_variable`
+inside a code block {glue:}`my_variable`
 ```
 ```{code-cell}
-{glue:}`my_variable`
+inside a {code-cell} {glue:}`my_variable`
 ```
 ```{code-cell} ipython3
-{glue:}`my_variable`
+inside an ipython {code-cell} {glue:}`my_variable`
 ```
