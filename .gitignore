@@ -1,5 +1,3 @@
 #Mac
 .DS_Store
 
-# Book build output
-_build/
