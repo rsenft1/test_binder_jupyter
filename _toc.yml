@@ -2,3 +2,4 @@ format: jb-book
 root: docs/test_page
 chapters:
 - file: docs/glue
+- file: docs/test_page_2

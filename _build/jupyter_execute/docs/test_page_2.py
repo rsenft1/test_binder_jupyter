@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # (launch:thebe)=
-# # Make your code cells executable
+# # CODE TEST
 
 # In[1]:
 

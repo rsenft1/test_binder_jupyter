@@ -13,7 +13,7 @@ kernelspec:
 ---
 
 (launch:thebe)=
-# Make your code cells executable
+# CODE TEST
 
 ```{code-cell} ipython3
 %store -r variablepgOne
