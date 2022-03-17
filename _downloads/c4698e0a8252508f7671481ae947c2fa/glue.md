@@ -45,10 +45,39 @@ The following code glues a variable inside the notebook:
 from myst_nb import glue
 a = "Batch1"
 glue("my_variable", a)
+
 ```
 
 ```md
 example markdown block {glue:}`my_variable`
+```
+
+Test out remove-input:
+
+```{code-cell} ipython3
+%store -r variablepgOne
+
+print(f"some code {variablepgOne}")
+```
+
+Test out remove-input with glue:
+
+```{code-cell} ipython3
+:tags: [remove-input]
+
+print(f"some code {b}")
+```
+
+```{code-cell} ipython3
+:tags: [remove-input]
+
+print(f"some code {c}")
+```
+Test out remove-input with variable deined elsewhere:
+```{code-cell} ipython3
+:tags: [remove-input]
+
+print(f"some code {variablefromanotherpage}")
 ```
 
 Some code here {glue:}`my_variable`+more code
