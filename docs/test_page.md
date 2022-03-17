@@ -20,6 +20,14 @@ run code and see outputs *without leaving the page*. Interactivity is provided
 by a kernel running on the public [**MyBinder**](https://mybinder.org) service.
 
 For an example, click the {fa}`rocket` --> {guilabel}`Live Code` button above on this page, and run the code below.
+```{code-cell} ipython3
+import cache_magic
+```
+
+```{code-cell} ipython3
+variablepgOne = "hey"
+%store variablepgOne
+```
 
 ```{code-cell} ipython3
 import numpy as np
