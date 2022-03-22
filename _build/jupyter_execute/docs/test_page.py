@@ -13,14 +13,18 @@
 # In[1]:
 
 
-import cache_magic
+variablepgOne = "hey"
+var2="yooo"
+get_ipython().run_line_magic('store', 'variablepgOne')
 
 
 # In[2]:
 
 
-variablepgOne = "hey"
-get_ipython().run_line_magic('store', 'variablepgOne')
+get_ipython().run_line_magic('store', '-r variablepgOne')
+
+print(f"some code {variablepgOne}")
+print(f"some code {var2}")
 
 
 # In[3]:
