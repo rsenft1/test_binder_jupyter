@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CODE TEST &#8212; DeepProfiler Handbook</title>
+    <title>A minimal example &#8212; DeepProfiler Handbook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -103,7 +103,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   CODE TEST
+   A minimal example
   </a>
  </li>
 </ul>
@@ -145,14 +145,11 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/docs/test_page_2.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/test_page_2.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/test_page_2.rst"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -186,31 +183,34 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rsenft1/test_binder_jupyter.git/main?urlpath=tree/docs/docs/test_page_2.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-and-configuring-thebe">
+   Loading and configuring Thebe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-thebe-ui-widgets-to-your-page">
+   Adding a Thebe UI widgets to your page
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-code-cells">
+   Adding code cells
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -219,21 +219,110 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="code-test">
-<span id="launch-thebe"></span><h1>CODE TEST<a class="headerlink" href="#code-test" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">store</span> -r variablepgOne
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;some code </span><span class="si">{</span><span class="n">variablepgOne</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <div class="section" id="a-minimal-example">
+<span id="minimal-example"></span><h1>A minimal example<a class="headerlink" href="#a-minimal-example" title="Permalink to this headline">¶</a></h1>
+<p>This page illustrates a minimal setup to get Thebe running, using
+<a class="reference external" href="http://mybinder.org/">mybinder</a> as a
+kernel (i.e. computation backend) provider. This guide will go step-by-step
+in loading Thebe and activating it so that your code cells become active.</p>
+<div class="section" id="loading-and-configuring-thebe">
+<h2>Loading and configuring Thebe<a class="headerlink" href="#loading-and-configuring-thebe" title="Permalink to this headline">¶</a></h2>
+<p>In order to use Thebe, we must first set its configuration. This must be
+done <strong>before</strong> Thebe is loaded from a CDN or a local script.</p>
+<p>There are many ways you can activate Thebe. In this case, we’ll add a
+button to our page, using the built in UI widgets, this will <strong>bootstrap</strong>
+Thebe once clicked. We’ll do this with a little bit of Javascript.</p>
+<p>Here’s a sample configuration for Thebe</p>
+<!-- Configure and load Thebe !-->
+<script type="text/x-thebe-config">
+  {
+    requestKernel: true,
+    mountActivateWidget: true,
+    mountStatusWidget: true,
+    binderOptions: {
+      repo: "binder-examples/requirements",
+    },
+  }
+</script><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Configure and load Thebe !--&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/x-thebe-config&quot;</span><span class="p">&gt;</span>
+  <span class="p">{</span>
+      <span class="nx">requestKernel</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">mountActivateWidget</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">mountStatusWidget</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">binderOptions</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">repo</span><span class="o">:</span> <span class="s2">&quot;binder-examples/requirements&quot;</span><span class="p">,</span>
+      <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">requestKernel:</span> <span class="pre">true</span></code> asks Thebe to request a kernel
+immediately upon being loaded, and <code class="docutils literal notranslate"><span class="pre">binderOptions</span></code> provides the repository
+that Binder will use to give us a Kernel.</p>
+<p>Next, we’ll load Thebe from a CDN:</p>
+<script src="../_static/lib/index.js"></script><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/thebe@latest/lib/index.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>some code hey
+<div class="section" id="adding-a-thebe-ui-widgets-to-your-page">
+<h2>Adding a Thebe UI widgets to your page<a class="headerlink" href="#adding-a-thebe-ui-widgets-to-your-page" title="Permalink to this headline">¶</a></h2>
+<p>When the configuration options are set to mount the activate button and status field, you will need
+to include mount points in your page which will be used to place the widgets.</p>
+<p>We can do this by adding the following <cite>div</cite> elements:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;thebe-activate&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;thebe-status&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
+<p>The following UI widgets are then mounted on the page.</p>
+<style>
+   .thebe-activate, .thebe-status {
+      margin-bottom: 10px;
+   }
+</style>
+<div class="thebe-activate"></div>
+<div class="thebe-status"></div><p>These widgets are minimally styled, but can be modified by overrriding or extending the following classes; <cite>thebe-status</cite>, <cite>thebe-status-mounted</cite>, <cite>thebe-status-stub</cite>, <cite>thebe-status-field</cite>, <cite>thebe-status-message</cite>, <cite>thebe-status-building</cite>, <cite>thebe-status-launching</cite>, <cite>thebe-status-starting</cite>, <cite>thebe-status-ready</cite>, <cite>thebe-status-failed</cite>, <cite>thebe-status-busy</cite>.</p>
 </div>
+<div class="section" id="adding-code-cells">
+<h2>Adding code cells<a class="headerlink" href="#adding-code-cells" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we’ll add code cells that Thebe can activate. By default, Thebe
+will look for any HTML elements with <code class="docutils literal notranslate"><span class="pre">data-executable=&quot;true&quot;</span></code>. We’ll also add
+a <code class="docutils literal notranslate"><span class="pre">data-language=&quot;python&quot;</span></code> attribute to enable syntax highlighting with CodeMirror.</p>
+<pre data-executable="true" data-language="python">print("Hello!")</pre><p>Here’s the code that created the cell above:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span> <span class="na">data-executable</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="na">data-language</span><span class="o">=</span><span class="s">&quot;python&quot;</span><span class="p">&gt;</span>print(&quot;Hello!&quot;)<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Press the Thebe button above to activate this cell, then press the “Run” button,
+or “Shift-Enter” to execute this cell.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Thebe is activated in this example, it must first ask Binder for a kernel.
+This may take several seconds.</p>
+</div>
+<p>Now let’s try another cell that generates a Matplotlib plot. Because we’ve
+configured Thebe to use Binder with an environment that has Numpy and
+Matplotlib, this works as expected. Try modifying the cell contents and
+re-running!</p>
+<p>This is another cell, with plotting. Shift-Enter again!</p>
+<pre data-executable="true" data-language="python">
+%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0,10)
+plt.plot(x, np.sin(x))
+plt.plot(x, np.cos(x))
+</pre><p>Here’s the HTML for the cell above:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span> <span class="na">data-executable</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="na">data-language</span><span class="o">=</span><span class="s">&quot;python&quot;</span><span class="p">&gt;</span>
+%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0,10)
+plt.plot(x, np.sin(x))
+plt.plot(x, np.cos(x))
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>And here’s an example where the contents cannot be modified once instantiated:</p>
+<pre data-executable="true" data-language="python" data-readonly>print("My contents cannot be changed!")</pre><p>For more examples, check out <span class="xref std std-ref">more_examples</span>.</p>
 </div>
 </div>
 
